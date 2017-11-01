@@ -13,7 +13,7 @@ var cheerio = require("cheerio");
 // Require all models
 var db = require("./models");
 
-var PORT = process.env.port || 3000;;
+var PORT = process.env.PORT || 3000;;
 
 // Initialize Express
 var app = express();
@@ -30,7 +30,7 @@ app.use(express.static("public"));
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/homework2", {
+mongoose.connect(MONGODB_URI, {
   useMongoClient: true
 });
 
